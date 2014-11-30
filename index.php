@@ -3,11 +3,6 @@
 $listDomain = explode("\n", file_get_contents('listdomain.txt'));
 $domain = $listDomain[0];
 
-// var_dump($listDomain);
-
-// melihat grafik
-
-
  ?>
 
  <!DOCTYPE html>

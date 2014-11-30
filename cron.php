@@ -8,7 +8,7 @@ $listDomain = explode("\n", file_get_contents(__DIR__.'/listdomain.txt'));
 
 foreach ($listDomain as $domain) {
 
-	$domain = trim($domain); // weired _ 
+	$domain = trim($domain); // remove weired _ 
 
 	if(empty($domain)) continue;
 
@@ -68,9 +68,8 @@ foreach ($listDomain as $domain) {
 	echo "Finishing $domain <br>";
 
 	file_put_contents($file, serialize($result));
-	
+
 	sleep(1);
-	// ini branch development
 }
 
 
