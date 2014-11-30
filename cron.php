@@ -8,9 +8,9 @@ $listDomain = explode("\n", file_get_contents(__DIR__.'/listdomain.txt'));
 
 foreach ($listDomain as $domain) {
 
-	if(empty($domain)) continue;
-
 	$domain = trim($domain); // weired _ 
+
+	if(empty($domain)) continue;
 
 	// google index crawl
 	$html = @file_get_contents("https://www.google.com/search?q=site:{$domain}");		
@@ -68,9 +68,14 @@ foreach ($listDomain as $domain) {
 	echo "Finishing $domain <br>";
 
 	file_put_contents($file, serialize($result));
+<<<<<<< HEAD
 
 	sleep(5);
 	// ini branch master
+=======
+	sleep(1);
+	// ini branch development
+>>>>>>> development
 }
 
 
