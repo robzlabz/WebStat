@@ -1,10 +1,13 @@
 # WebStat 2
 
-Author : RobzLabz (fb.com/xenphy)
+Pembuat : Robbyn Rahmandaru (fb.com/xenphy)
 
-## How to use
-1. list all of your domain on listdomain.txt (make sure nothing empty line)
-2. Create cron each hour for cron.php file
+## Bagaimana cara menggunakannya?
+1. Unduh File 
+2. Buat Folder di folder public, misal domain.com/webstat
+1. Daftarkan domainmu di listdomain.txt (pastikan tidak ada baris kosong)
+2. Buat cronjob setiap satu jam sekali, arahkan ke cron.php
 
-## Want to use?
-just fork it
+```
+Contoh : (5 * * * * php /home/<user>/<domain>/public_html/webstat/cron.php)
+```
