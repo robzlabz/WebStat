@@ -8,7 +8,7 @@ $listDomain = explode("\n", file_get_contents(__DIR__.'/listdomain.txt'));
 
 foreach ($listDomain as $domain) {
 
-	$domain = trim($domain); // weired _ 
+	$domain = trim($domain); // remove weired _ 
 
 	if(empty($domain)) continue;
 
