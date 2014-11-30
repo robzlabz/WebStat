@@ -10,4 +10,9 @@ Pembuat : Robbyn Rahmandaru (fb.com/xenphy)
 
 ```
 Contoh : (5 * * * * php /home/<user>/<domain>/public_html/webstat/cron.php)
+Dijalankan setiap 1 jam di menit ke 5
 ```
+
+## Tampilan
+
+![Tampilan](http://i.imgur.com/9Rtf4qc.png)
