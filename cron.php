@@ -8,9 +8,9 @@ $listDomain = explode("\n", file_get_contents(__DIR__.'/listdomain.txt'));
 
 foreach ($listDomain as $domain) {
 
-	if(empty($domain)) continue;
-
 	$domain = trim($domain); // weired _ 
+
+	if(empty($domain)) continue;
 
 	// google index crawl
 	$html = @file_get_contents("https://www.google.com/search?q=site:{$domain}");		
