@@ -68,6 +68,7 @@ foreach ($listDomain as $domain) {
 	echo "Finishing $domain <br>";
 
 	file_put_contents($file, serialize($result));
+	
 	sleep(1);
 	// ini branch development
 }
