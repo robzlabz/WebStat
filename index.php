@@ -10,14 +10,8 @@ $domain = $listDomain[0];
  <head>
  	<title>WebStat 2</title>
  	<meta name="description" content="WebStat 2 with C3 Graph By RobzLabz Software Technology"> 	
-
- 	<!-- jquery -->
  	<script src="//code.jquery.com/jquery.js"></script>
- 	
- 	<!-- Bootstrap -->
  	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
- 	<!-- graph -->
  	<link rel="stylesheet" type="text/css" href="asset/css/c3.css">
  	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
  	<script src="asset/js/c3.min.js"></script>
@@ -27,13 +21,14 @@ $domain = $listDomain[0];
 		<h3 id="namadomain"><?php echo $domain ?></h3>
 		<div id="chart" data-graph="csv.php?d=<?php echo base64_encode($domain) ?>">Loading Data...</div> 
  		<?php foreach ($listDomain as $domain): ?>
- 			<button class="change btn btn-primary" data-csv="csv.php?d=<?php echo base64_encode($domain) ?>"><?php echo $domain; ?></button>
- 		<?php endforeach ?> 		
+ 			<?php if (! empty(trim($domain))): ?> 				
+ 				<button class="change btn btn-primary" data-csv="csv.php?d=<?php echo base64_encode($domain) ?>"><?php echo $domain; ?></button>
+ 			<?php endif ?> 				
+ 		<?php endforeach ?>  		 		
  	</div>
 
 <script type="text/javascript">
 	$(function(){		
-
 		var chart = c3.generate({
 			bindto : '#chart',
 			point: {
@@ -60,7 +55,7 @@ $domain = $listDomain[0];
                 }
 			},
 			zoom : {enabled : true},
-			subchart : {show : true}
+			subchart : {show : false}
 		});	
 
 		$('.change').click(function(e){
