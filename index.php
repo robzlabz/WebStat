@@ -1,6 +1,7 @@
 <?php 
 
 $listDomain = explode("\n", file_get_contents('listdomain.txt'));
+$listDomain = array_map('trim', $listDomain);
 $domain = $listDomain[0];
 
  ?>
@@ -21,7 +22,7 @@ $domain = $listDomain[0];
 		<h3 id="namadomain"><?php echo $domain; ?></h3>
 		<div id="chart" data-graph="csv.php?d=<?php echo base64_encode($domain); ?>">Loading Data...</div> 
  		<?php foreach ($listDomain as $domain): ?>
- 			<?php if (! empty(trim($domain))): ?> 				
+ 			<?php if (! empty($domain)): ?> 				
  				<button class="change btn btn-primary" data-csv="csv.php?d=<?php echo base64_encode($domain); ?>"><?php echo $domain; ?></button>
  			<?php endif; ?> 				
  		<?php endforeach; ?>  		 		
