@@ -18,13 +18,13 @@ $domain = $listDomain[0];
  </head>
  <body>
  	<div class="container">
-		<h3 id="namadomain"><?php echo $domain ?></h3>
-		<div id="chart" data-graph="csv.php?d=<?php echo base64_encode($domain) ?>">Loading Data...</div> 
+		<h3 id="namadomain"><?php echo $domain; ?></h3>
+		<div id="chart" data-graph="csv.php?d=<?php echo base64_encode($domain); ?>">Loading Data...</div> 
  		<?php foreach ($listDomain as $domain): ?>
  			<?php if (! empty(trim($domain))): ?> 				
- 				<button class="change btn btn-primary" data-csv="csv.php?d=<?php echo base64_encode($domain) ?>"><?php echo $domain; ?></button>
- 			<?php endif ?> 				
- 		<?php endforeach ?>  		 		
+ 				<button class="change btn btn-primary" data-csv="csv.php?d=<?php echo base64_encode($domain); ?>"><?php echo $domain; ?></button>
+ 			<?php endif; ?> 				
+ 		<?php endforeach; ?>  		 		
  	</div>
 
 <script type="text/javascript">
