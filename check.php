@@ -5,7 +5,7 @@
 	$domain = $argv[1];
 
 	if(empty($argv[2])) {
-		$list 		= array('Search', 'Image', 'Alexa', 'Post');
+		$list 		= array('Search', 'Image');
 
 		foreach ($list as $type) {
 			$stream[$type] = popen("php check.php $domain $type", 'r');
@@ -61,22 +61,6 @@
 				preg_match("/[0-9,]+/", $result, $output);
 				$image_search = empty($output) ? '0' : str_replace(',', '', $output[0]);
 				echo trim($image_search);
-				break;
-			case 'Alexa' :
-				// alexa
-				$html = @file_get_contents("http://www.alexa.com/siteinfo/{$domain}");
-				if(empty($html)) { die("Crawl Error"); }
-				$obj = str_get_html($html);	
-				$result = $obj->find('strong[class=metrics-data]',0)->plaintext;	
-				preg_match("/[0-9,]+/", $result, $output);
-				$alexa = empty($output) ? '0' : str_replace(',', '', $output[0]);
-				echo trim($alexa);
-				break;
-			case 'Post':
-				// Post Published	
-				$post = file_get_contents("http://robbynr.com/tools/keyword/?url={$domain}&json=yes");
-				$post = is_numeric($post) ? $post : 0;
-				echo trim($post);
 				break;
 		}
 	}
